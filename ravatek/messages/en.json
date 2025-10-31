@@ -1,0 +1,47 @@
+{
+  "seo": {
+    "title": "Ravatek — Intelligent Systems for Business Growth",
+    "description": "From content recommendation to HR analytics — one AI core for your future."
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "solutions": "Solutions",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "requestDemo": "Request Demo",
+    "contactUs": "Contact Us"
+  },
+  "hero": {
+    "title": "Ravatek — Intelligent Systems for Business Growth",
+    "subtitle": "From content recommendation to HR analytics — one AI core for your future.",
+    "primaryCta": "Request Demo",
+    "secondaryCta": "Contact Us"
+  },
+  "footer": {
+    "tagline": "Designing reliable AI platforms for ambitious teams.",
+    "rights": "All rights reserved."
+  },
+  "blog": {
+    "title": "Insights & Updates",
+    "latest": "Latest Posts",
+    "readMore": "Read more",
+    "empty": "No posts available yet. Please check back soon.",
+    "publishedOn": "Published on"
+  },
+  "language": {
+    "fa": "فارسی",
+    "en": "English"
+  },
+  "sections": {
+    "productsTitle": "Modular AI products",
+    "productsDescription": "Composable services for recommendation, forecasting and workforce intelligence.",
+    "solutionsTitle": "Industry solutions",
+    "solutionsDescription": "Tailored deployments for media, finance and enterprise operations.",
+    "aboutTitle": "Who we are",
+    "aboutDescription": "Ravatek brings researchers and engineers together to deliver reliable, human-centered AI systems.",
+    "contactTitle": "Let's talk",
+    "contactDescription": "Reach out to co-create pilots, integrations or enterprise platforms with our team."
+  }
+}

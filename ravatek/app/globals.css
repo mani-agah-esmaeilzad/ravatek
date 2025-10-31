@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.75rem;
+    --primary: 250 95% 63%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 64% 42%;
+    --secondary-foreground: 210 40% 98%;
+  }
+
+  .dark {
+    --background: 222.2 47.4% 11.2%;
+    --foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 213 27% 30%;
+    --primary: 250 95% 73%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 270 64% 52%;
+    --secondary-foreground: 210 40% 98%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html[dir='rtl'] body {
+    font-family: 'Vazirmatn', var(--font-sans), sans-serif;
+  }
+
+  pre, code {
+    font-family: 'Fira Code', 'Fira Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+
+  pre {
+    @apply overflow-x-auto rounded-2xl bg-muted p-4;
+  }
+
+  code {
+    @apply rounded-md bg-muted px-1 py-0.5;
+  }
+}
