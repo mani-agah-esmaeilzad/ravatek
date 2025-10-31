@@ -1,6 +1,6 @@
-import { withNextIntl } from 'next-intl/plugin';
+import createNextIntlPlugin from 'next-intl/plugin';
 
-const withIntl = withNextIntl('./src/i18n/request.ts');
+const withIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const config = {
   reactStrictMode: true,
