@@ -6,6 +6,7 @@
   "nav": {
     "home": "Home",
     "products": "Products",
+    "projects": "Projects",
     "solutions": "Solutions",
     "blog": "Blog",
     "about": "About",
@@ -37,11 +38,40 @@
   "sections": {
     "productsTitle": "Modular AI products",
     "productsDescription": "Composable services for recommendation, forecasting and workforce intelligence.",
+    "projectsTitle": "Recent client implementations",
+    "projectsDescription": "A snapshot of platforms we've launched with partners across HR, industry and real estate.",
     "solutionsTitle": "Industry solutions",
     "solutionsDescription": "Tailored deployments for media, finance and enterprise operations.",
     "aboutTitle": "Who we are",
     "aboutDescription": "Ravatek brings researchers and engineers together to deliver reliable, human-centered AI systems.",
     "contactTitle": "Let's talk",
     "contactDescription": "Reach out to co-create pilots, integrations or enterprise platforms with our team."
+  },
+  "projects": {
+    "hrbooteh": {
+      "category": "Talent acquisition",
+      "title": "HRBooteh",
+      "description": "An end-to-end hiring platform for Booteh with AI applicant scoring, onboarding workflows and bilingual analytics dashboards."
+    },
+    "arabicHr": {
+      "category": "HR automation",
+      "title": "Arabic HR",
+      "description": "A localized HR automation suite for Arabic-speaking teams delivering AI chat support, contract generation and compliance reminders."
+    },
+    "zenlub": {
+      "category": "Industrial intelligence",
+      "title": "Zenlub",
+      "description": "Predictive lubricant monitoring for industrial partners, blending IoT telemetry with anomaly detection to reduce downtime."
+    },
+    "revanac": {
+      "category": "Retail analytics",
+      "title": "Revanac",
+      "description": "Customer retention intelligence for the Revanac retail network, unifying CRM data to fuel personalized campaigns and loyalty insights."
+    },
+    "amlak": {
+      "category": "Real estate",
+      "title": "Amlak",
+      "description": "An AI-driven property valuation and listing optimizer delivering dynamic pricing suggestions and lead prioritization for agents."
+    }
   }
 }
