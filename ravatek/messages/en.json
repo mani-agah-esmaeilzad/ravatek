@@ -72,6 +72,8 @@
       "category": "Real estate",
       "title": "Amlak",
       "description": "An AI-driven property valuation and listing optimizer delivering dynamic pricing suggestions and lead prioritization for agents."
-    }
+    },
+    "cta": "Request a walkthrough",
+    "emailSubject": "{{project}} project inquiry"
   }
 }

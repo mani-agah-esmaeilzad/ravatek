@@ -30,6 +30,14 @@ export default async function HomePage({ params }: { params: { locale: string } 
     title: tProjects(`${key}.title`),
     description: tProjects(`${key}.description`)
   }));
+  const contactLabel = tProjects('cta');
+  const projectContactLinks = projectKeys.reduce<Record<(typeof projectKeys)[number], string>>((links, key) => {
+    const subject = encodeURIComponent(
+      tProjects('emailSubject', { project: tProjects(`${key}.title`) })
+    );
+    links[key] = `mailto:hello@ravatek.ai?subject=${subject}`;
+    return links;
+  }, {} as Record<(typeof projectKeys)[number], string>);
 
   return (
     <div className="relative min-h-screen overflow-hidden" id="top">
@@ -72,6 +80,9 @@ export default async function HomePage({ params }: { params: { locale: string } 
                 </span>
                 <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
                 <p className="text-sm text-muted-foreground">{project.description}</p>
+                <Button variant="ghost" className="mt-auto w-fit px-0 text-sm" asChild>
+                  <a href={projectContactLinks[project.key]}>{contactLabel}</a>
+                </Button>
               </article>
             ))}
           </div>
