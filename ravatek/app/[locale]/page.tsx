@@ -21,7 +21,23 @@ export default async function HomePage({ params }: { params: { locale: string } 
   const tHero = await getTranslations({ locale, namespace: 'hero' });
   const tBlog = await getTranslations({ locale, namespace: 'blog' });
   const tSections = await getTranslations({ locale, namespace: 'sections' });
+  const tProjects = await getTranslations({ locale, namespace: 'projects' });
   const posts = await getLatestPosts(locale);
+  const projectKeys = ['hrbooteh', 'arabicHr', 'zenlub', 'revanac', 'amlak'] as const;
+  const projects = projectKeys.map((key) => ({
+    key,
+    category: tProjects(`${key}.category`),
+    title: tProjects(`${key}.title`),
+    description: tProjects(`${key}.description`)
+  }));
+  const contactLabel = tProjects('cta');
+  const projectContactLinks = projectKeys.reduce<Record<(typeof projectKeys)[number], string>>((links, key) => {
+    const subject = encodeURIComponent(
+      tProjects('emailSubject', { project: tProjects(`${key}.title`) })
+    );
+    links[key] = `mailto:hello@ravatek.ai?subject=${subject}`;
+    return links;
+  }, {} as Record<(typeof projectKeys)[number], string>);
 
   return (
     <div className="relative min-h-screen overflow-hidden" id="top">
@@ -46,6 +62,30 @@ export default async function HomePage({ params }: { params: { locale: string } 
         <section id="products" className="rounded-3xl border border-border/60 bg-background/70 p-10 backdrop-blur">
           <h2 className="text-2xl font-semibold tracking-tight">{tSections('productsTitle')}</h2>
           <p className="mt-3 text-muted-foreground">{tSections('productsDescription')}</p>
+        </section>
+
+        <section id="projects" className="rounded-3xl border border-border/60 bg-background/70 p-10 backdrop-blur">
+          <div className="flex flex-col gap-3">
+            <h2 className="text-2xl font-semibold tracking-tight">{tSections('projectsTitle')}</h2>
+            <p className="text-muted-foreground">{tSections('projectsDescription')}</p>
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {projects.map((project) => (
+              <article
+                key={project.key}
+                className="group relative flex flex-col gap-3 rounded-2xl border border-border/60 bg-background/60 p-6 transition hover:border-border hover:shadow-lg"
+              >
+                <span className="text-xs font-semibold uppercase tracking-wide text-primary/80">
+                  {project.category}
+                </span>
+                <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
+                <p className="text-sm text-muted-foreground">{project.description}</p>
+                <Button variant="ghost" className="mt-auto w-fit px-0 text-sm" asChild>
+                  <a href={projectContactLinks[project.key]}>{contactLabel}</a>
+                </Button>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section id="solutions" className="rounded-3xl border border-border/60 bg-background/70 p-10 backdrop-blur">
